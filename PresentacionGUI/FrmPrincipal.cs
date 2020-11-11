@@ -16,5 +16,11 @@ namespace PresentacionGUI
         {
             InitializeComponent();
         }
+
+        private void rEGISTRARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRegistroPersona frmRegistroPersona = new FrmRegistroPersona();
+            frmRegistroPersona.ShowDialog();
+        }
     }
 }
