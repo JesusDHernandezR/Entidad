@@ -122,6 +122,11 @@
             // comboBoxTipoContrato
             // 
             this.comboBoxTipoContrato.FormattingEnabled = true;
+            this.comboBoxTipoContrato.Items.AddRange(new object[] {
+            "Seleccionar",
+            "Prestación de servicio",
+            "Licitación Pública ",
+            "Subasta Inversa"});
             this.comboBoxTipoContrato.Location = new System.Drawing.Point(169, 233);
             this.comboBoxTipoContrato.Name = "comboBoxTipoContrato";
             this.comboBoxTipoContrato.Size = new System.Drawing.Size(121, 21);

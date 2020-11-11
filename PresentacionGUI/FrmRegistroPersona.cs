@@ -14,11 +14,11 @@ namespace PresentacionGUI
 {
     public partial class FrmRegistroPersona : Form
     {
-        PersonaService personaService;
+        ContratoService personaService;
         public FrmRegistroPersona()
         {
             InitializeComponent();
-            personaService = new PersonaService();
+            personaService = new ContratoService();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -34,14 +34,14 @@ namespace PresentacionGUI
 
         public string Guardar()
         {
-            Persona persona = MapearTexto();
+            Contrato persona = MapearTexto();
             string mensaje = personaService.Guardar(persona);
             return mensaje;            
         }
 
-        private Persona MapearTexto()
+        private Contrato MapearTexto()
         {
-            var persona = new Persona();
+            var persona = new Contrato();
             persona.Id = txtIdentificacion.Text;
             persona.Nombre = txtNombre.Text;
             persona.FechaNacimiento = DateTime.Parse(dateTimePickerNacimiento.Text);

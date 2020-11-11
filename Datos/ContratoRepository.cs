@@ -8,10 +8,10 @@ using Entidad;
 
 namespace Datos
 {
-    public class PersonaRepository
+    public class ContratoRepository
     {
         private readonly string FileName = "Persona.txt";
-        public void Guardar(Persona persona)
+        public void Guardar(Contrato persona)
         {
             FileStream origen = new FileStream(FileName, FileMode.Append);
             StreamWriter writer = new StreamWriter(origen);
@@ -22,25 +22,25 @@ namespace Datos
             origen.Close();
         }
 
-        public List<Persona> Consultar()
+        public List<Contrato> Consultar()
         {
-            List<Persona> personas = new List<Persona>();
+            List<Contrato> personas = new List<Contrato>();
             FileStream origen = new FileStream(FileName, FileMode.OpenOrCreate);
             StreamReader reader = new StreamReader(origen);
             string linea = string.Empty;
             while ((linea = reader.ReadLine()) != null)
             {
-                Persona persona = Mapear(linea);
+                Contrato persona = Mapear(linea);
                 personas.Add(persona);
             }
             reader.Close();
             origen.Close();
             return personas;
         }
-        private Persona Mapear(string linea)
+        private Contrato Mapear(string linea)
         {
             string[] datos = linea.Split(';');
-            Persona persona = new Persona();
+            Contrato persona = new Contrato();
             persona.Id = datos[0];
             persona.Nombre = datos[1];
             persona.FechaNacimiento = DateTime.Parse(datos[2]);

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using Entidad;
 namespace Logica
 {
-    public class PersonaService
+    public class ContratoService
     {
-        PersonaRepository personaRepository;
-        public PersonaService()
+        ContratoRepository personaRepository;
+        public ContratoService()
         {
-            personaRepository = new PersonaRepository();
+            personaRepository = new ContratoRepository();
         }
-        public string Guardar(Persona persona)
+        public string Guardar(Contrato persona)
         {
             try
             {
@@ -32,6 +32,18 @@ namespace Logica
             {
 
                 return $"Error de la Aplicacion: {e.Message}";
+            }
+        }
+        public List<Contrato> Consultar()
+        {
+            try
+            {
+                List<Contrato> listaContrato = personaRepository.Consultar();
+                return listaContrato;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
     }
