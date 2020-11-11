@@ -10,6 +10,11 @@ namespace Datos
 {
     public class ContratoRepository
     {
+        List<Contrato> contrato;
+        public ContratoRepository()
+        {
+            contrato = new List<Contrato>();
+        }
         private readonly string FileName = "Persona.txt";
         public void Guardar(Contrato persona)
         {
@@ -48,6 +53,11 @@ namespace Datos
             persona.TipoDeContrato = datos[4];
             persona.ValorDeContrato = decimal.Parse(datos[5]);
             return persona;
+        }
+        public List<Contrato> ConsultaPorFiltro(string tipoContrato, int mesNacimiento, int añoNacimiento)
+        {
+            Consultar();
+            return contrato.FindAll(c => c.TipoDeContrato.Equals(tipoContrato) && c.FechaNacimiento.Month == mesNacimiento && c.FechaNacimiento.Year == añoNacimiento).ToList();
         }
     }
 }

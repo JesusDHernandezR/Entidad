@@ -46,5 +46,17 @@ namespace Logica
                 return null;
             }
         }
-    }
+        public List<Contrato> ConsultaPorFiltro(string tipoContrato, int mesNacimiento, int añoNacimiento)
+        {
+            try
+            {
+                List<Contrato> listaContrato = personaRepository.ConsultaPorFiltro(tipoContrato, mesNacimiento, añoNacimiento);
+                return listaContrato;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+    }   
 }

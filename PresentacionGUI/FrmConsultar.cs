@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidad;
 using Logica;
 namespace PresentacionGUI
 {
     public partial class FrmConsultar : Form
     {
         ContratoService contratacionService;
+        Contrato contrato1;
         public FrmConsultar()
         {
             InitializeComponent();
             contratacionService = new ContratoService();
+            contrato1 = new Contrato();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,6 +50,17 @@ namespace PresentacionGUI
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            string contratos;
+            DateTime fechaNacimiento;
+            contratos = comboBoxTipoContrato.Text;
+            fechaNacimiento = dateTimePickerNacimiento.Value;
+
+            ContratoService service = new ContratoService();
+            dataGridViewDatos.DataSource = service.ConsultaPorFiltro(contratos, fechaNacimiento.Month, fechaNacimiento.Year);            
         }
     }
 }
