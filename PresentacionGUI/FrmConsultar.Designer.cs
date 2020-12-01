@@ -50,7 +50,7 @@
             this.dataGridViewDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDatos.Location = new System.Drawing.Point(12, 76);
             this.dataGridViewDatos.Name = "dataGridViewDatos";
-            this.dataGridViewDatos.Size = new System.Drawing.Size(779, 258);
+            this.dataGridViewDatos.Size = new System.Drawing.Size(779, 221);
             this.dataGridViewDatos.TabIndex = 0;
             // 
             // btnConsultar
@@ -129,6 +129,8 @@
             // 
             // comboBoxTipoContrato
             // 
+            this.comboBoxTipoContrato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipoContrato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBoxTipoContrato.FormattingEnabled = true;
             this.comboBoxTipoContrato.Items.AddRange(new object[] {
             "Seleccionar",
@@ -194,7 +196,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.dataGridViewDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmConsultar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONSULTAR";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatos)).EndInit();
             this.ResumeLayout(false);

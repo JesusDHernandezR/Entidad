@@ -121,7 +121,10 @@
             // 
             // comboBoxTipoContrato
             // 
-            this.comboBoxTipoContrato.FormattingEnabled = true;
+            this.comboBoxTipoContrato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipoContrato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBoxTipoContrato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTipoContrato.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboBoxTipoContrato.Items.AddRange(new object[] {
             "Seleccionar",
             "Prestación de servicio",
@@ -210,8 +213,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FrmRegistroPersona";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTRAR PERSONA";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -229,12 +233,12 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DateTimePicker dateTimePickerNacimiento;
-        private System.Windows.Forms.ComboBox comboBoxTipoContrato;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtValorContrato;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.ComboBox comboBoxTipoContrato;
     }
 }

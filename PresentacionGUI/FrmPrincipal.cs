@@ -33,5 +33,12 @@ namespace PresentacionGUI
         {
             this.Close();
         }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'database.TablaDatos' Puede moverla o quitarla según sea necesario.
+            this.tablaDatosTableAdapter.Fill(this.database.TablaDatos);
+
+        }
     }
 }
